@@ -1,0 +1,22 @@
+{
+  "extends": "nx/presets/npm.json",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "service-driven-forms",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "MTI5NDg4YmItMTMwZC00YzgxLWE5MzYtNTY1YmFhNTAxNTllfHJlYWQtd3JpdGU="
+      }
+    }
+  }
+}
