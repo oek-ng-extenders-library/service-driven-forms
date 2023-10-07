@@ -1,0 +1,51 @@
+{
+  "name": "container-components",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/container-components/src",
+  "prefix": "oek-sdf",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "packages/container-components/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/container-components/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/container-components/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/container-components/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/container-components/**/*.ts",
+          "packages/container-components/**/*.html",
+          "packages/container-components/package.json"
+        ]
+      }
+    }
+  }
+}

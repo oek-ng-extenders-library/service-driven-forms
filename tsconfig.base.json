@@ -14,7 +14,16 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@oek-sdf/form-builder": [
+        "packages/form-builder/src/index.ts"
+      ],
+      "@oek-sdf/container-components": [
+        "packages/container-components/src/index.ts"
+      ],
+      "@oek-sdf/custom-component": ["packages/custom-component/src/index.ts"],
+      "@oek-sdf/material-components": ["packages/material-components/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
